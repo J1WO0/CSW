@@ -1,6 +1,7 @@
 #include "shapes.h"
 #include <iostream>
 #include <string>
+#include <math.h>
 
 using namespace std;
 
@@ -98,11 +99,11 @@ Diamond::Diamond(int x_,int y_,int dis_,string ss,int cch,int ccw):
 }
 double Diamond::GetArea()
 {
-    return (double)(dis+dis+1)*(dis+dis+1)/2;
+    return (double)dis*dis*2;
 }
 int Diamond::GetPerimeter()
 {
-    return 4*(dis+1);
+    return 4*sqr(dis*dis+dis*dis);
 }
 void Diamond::Draw()
 {
