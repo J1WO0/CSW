@@ -33,6 +33,11 @@ void Canvas::Resize(size_t w, size_t h)
     wid=w;
     hei=h;
     vec.resize(hei+1,vector<char>(wid+1,'.'));
+    for(int i=0;i<hei+1;i++)
+    {
+        for(int k=0;k<wid+1;k++)
+            vec[i][k]='.';
+    }
     char k='0';
     for(int i=1;i<wid+1;i++)
     {
@@ -85,7 +90,7 @@ void Rectangle::Draw(Canvas* cc)
 {
     for(int i=0;i<rhei;i++)
     {
-        for(int k=0;i<rwid;k++)
+        for(int k=0;k<rwid;k++)
             cc->DrawPixel(xpos+k,ypos+i,bru);
     }
 }
