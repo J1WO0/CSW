@@ -29,4 +29,6 @@ int main()
     cout << "Reported clock times after running:" << endl;
     for (int i=0;i<arr.size();i++)
         arr[i]->displayTime();
+    for (int i=0;i<arr.size();i++)
+        delete arr[i];
 }
