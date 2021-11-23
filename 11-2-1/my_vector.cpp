@@ -1,8 +1,15 @@
 #include "my_vector.h"
 using namespace std;
-MyVector::MyVector(int length): length(length), a(new double[length]) {}
+MyVector::MyVector(int length)
+{
+    this->length=length;
+    a=new double[length];
+}
 MyVector::MyVector()
-{}
+{
+    length=length;
+    a=NULL;
+}
 MyVector::~MyVector()
 {
     delete[] a;
@@ -38,7 +45,7 @@ MyVector MyVector::operator+(const MyVector& b)
 MyVector MyVector::operator-(const MyVector& b)
 {
     MyVector vv(length);
-    for (int i=0;i<10;i++)
+    for (int i=0;i<length;i++)
         vv.a[i]=a[i]-b.a[i];
     return vv;
 }
